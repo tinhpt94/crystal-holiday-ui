@@ -1,0 +1,30 @@
+.loading-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #ddd;
+  opacity: 0.9;
+}
+
+.loading {
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 40%;
+}
+
+.loading span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.loading .sk-spinner {
+  margin: 20px 70px;
+}
+
+.sk-spinner > div {
+  background-color: #7F7FFF !important;
+  width: 30px !important;
+  height: 30px !important;
+}
