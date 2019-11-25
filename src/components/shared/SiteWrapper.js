@@ -148,7 +148,7 @@ class SiteWrapper extends React.Component {
         { icon: "send", value: "Message" },
         { isDivider: true },
         { icon: "help-circle", value: "Need help?" },
-        { icon: "log-out", value: "Sign out" }
+        { icon: "log-out", value: "Sign out", to: "/logout" }
       ]
     }
   };
@@ -167,16 +167,14 @@ class SiteWrapper extends React.Component {
     return nextProps.auth.user != this.props.auth.user || nextProps.auth.isAuthenticated != this.props.auth.isAuthenticated;
   }
 
-  componentWillUpdate = (nextProps) => {
-    if (nextProps.auth.isAuthenticated && nextProps.auth.user) {
-      this.setState({
-        accountDropdownProps: update(this.state.accountDropdownProps, {
-          avatarURL: {$set: nextProps.auth.user.imageUrl},
-          name: {$set: nextProps.auth.user.name},
-          description: {$set: nextProps.auth.user.role}
-        })
-      });
-    }
+  componentWillReceiveProps =(nextProps) => {
+    this.setState({
+      accountDropdownProps: update(this.state.accountDropdownProps, {
+        avatarURL: {$set: nextProps.auth.user.imageUrl.replace(/\\/g, '/')},
+        name: {$set: nextProps.auth.user.name},
+        description: {$set: nextProps.auth.user.role}
+      })
+    });
   }
 
   componentDidUpdate = () => {

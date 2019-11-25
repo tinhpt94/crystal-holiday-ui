@@ -1,11 +1,11 @@
 import rest from './base_request';
 
 export const login = (payload) => {
-  return rest.post("/auth", payload);
+  return rest.post("/auth/login", payload);
 }
 
 export const getCurrentUser = () => {
-  return rest.get("/hr/user/", {
+  return rest.get("/hr/user", {
     headers: {
       Authorization: localStorage.getItem("token")
     }

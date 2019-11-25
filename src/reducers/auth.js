@@ -24,6 +24,9 @@ export default (state = DEFAULT_STATE, action) => {
         .setIn(["isAuthenticated"], false);
     case types.GET_CURRENT_USER_SUCCESS:
       return state.setIn(["user"], action.data);
+    case types.LOGOUT_REQUEST:
+      localStorage.removeItem("token");
+      return state.setIn(["user"], null).setIn(["isAuthenticated"], false);
     default:
       return state;
   }

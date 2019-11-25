@@ -40,3 +40,9 @@ export const getCurrentUserFailed = (response) => {
     error: response
   }
 }
+
+export const logout = () => {
+  return {
+    type: types.LOGOUT_REQUEST
+  }
+}
