@@ -170,7 +170,7 @@ class SiteWrapper extends React.Component {
   componentWillReceiveProps =(nextProps) => {
     this.setState({
       accountDropdownProps: update(this.state.accountDropdownProps, {
-        avatarURL: {$set: nextProps.auth.user.imageUrl.replace(/\\/g, '/')},
+        //avatarURL: {$set: nextProps.auth.user.imageUrl.replace(/\\/g, '/')},
         name: {$set: nextProps.auth.user.name},
         description: {$set: nextProps.auth.user.role}
       })
