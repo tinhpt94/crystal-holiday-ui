@@ -65,7 +65,7 @@ const navBarItems = [
         to: "/forgot-password",
         LinkComponent: withRouter(NavLink)
       },
-      { value: "400 error", to: "/400", LinkComponent: withRouter(NavLink) },
+      { value: "Product", to: "/product", LinkComponent: withRouter(NavLink) },
       { value: "401 error", to: "/401", LinkComponent: withRouter(NavLink) },
       { value: "403 error", to: "/403", LinkComponent: withRouter(NavLink) },
       { value: "404 error", to: "/404", LinkComponent: withRouter(NavLink) },
@@ -175,10 +175,6 @@ class SiteWrapper extends React.Component {
         description: {$set: nextProps.auth.user.role}
       })
     });
-  }
-
-  componentDidUpdate = () => {
-    console.log(JSON.stringify(this.state.accountDropdownProps))
   }
 
   render() {

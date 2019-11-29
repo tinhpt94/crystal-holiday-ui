@@ -9,6 +9,8 @@ import "tabler-react/dist/Tabler.css";
 import store from "./store";
 import LoginPage from "./pages/LoginPage";
 import LogoutPage from "./pages/LogoutPage"
+import CustomerPage from "./pages/CustomerPage";
+import ProductPage from "./pages/ProductPage";
 
 class App extends React.Component {
   render() {
@@ -19,6 +21,8 @@ class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/logout" component={LogoutPage} />
+              <Route exact path="/customer" component={CustomerPage} />
+              <Route exact path="/product" component={ProductPage} />
             </Switch>
           </Router>
       </Provider>
