@@ -53,7 +53,7 @@ const navBarItems = [
     value: "Pages",
     icon: "file",
     subItems: [
-      { value: "Profile", to: "/profile", LinkComponent: withRouter(NavLink) },
+      { value: "Customer", to: "/customer", LinkComponent: withRouter(NavLink) },
       { value: "Login", to: "/login", LinkComponent: withRouter(NavLink) },
       {
         value: "Register",
@@ -153,29 +153,29 @@ class SiteWrapper extends React.Component {
     }
   };
 
-  componentWillMount = () => {
-    
-  };
-
   componentDidMount = () => {
-    if (this.props.auth.isAuthenticated) {
+    if (
+      this.props.store.auth.isAuthenticated &&
+      this.props.store.auth.user == null
+    ) {
       this.props.actions.getCurrentUserRequest();
     }
   };
 
   shouldComponentUpdate = (nextProps, nextState) => {
-    return nextProps.auth.user != this.props.auth.user || nextProps.auth.isAuthenticated != this.props.auth.isAuthenticated;
-  }
+    return nextProps.store != this.props.store;
+  };
 
-  componentWillReceiveProps =(nextProps) => {
-    this.setState({
-      accountDropdownProps: update(this.state.accountDropdownProps, {
-        //avatarURL: {$set: nextProps.auth.user.imageUrl.replace(/\\/g, '/')},
-        name: {$set: nextProps.auth.user.name},
-        description: {$set: nextProps.auth.user.role}
-      })
-    });
-  }
+  componentWillReceiveProps = nextProps => {
+    if (nextProps.store.auth.user != null)
+      this.setState({
+        accountDropdownProps: update(this.state.accountDropdownProps, {
+          //avatarURL: {$set: nextProps.auth.user.imageUrl.replace(/\\/g, '/')},
+          name: { $set: nextProps.store.auth.user.name },
+          description: { $set: nextProps.store.auth.user.role }
+        })
+      });
+  };
 
   render() {
     const notificationsObjects = this.state.notificationsObjects || [];
@@ -188,8 +188,8 @@ class SiteWrapper extends React.Component {
       <Site.Wrapper
         headerProps={{
           href: "/",
-          alt: "Tabler React",
-          imageURL: "./demo/brand/tabler.svg",
+          alt: "Crystal Holiday",
+          imageURL: "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
           navItems: (
             <Nav.Item type="div" className="d-none d-md-flex">
               <Button
@@ -293,7 +293,7 @@ class SiteWrapper extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    auth: state.default.auth,
+    store: state.default,
     routing: state.routing.locationBeforeTransitions
   };
 };

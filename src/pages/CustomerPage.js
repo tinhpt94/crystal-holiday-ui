@@ -1,74 +1,26 @@
 import React, { Component } from "react";
 import SiteWrapper from "../components/shared/SiteWrapper";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as actions from "../actions";
 
-import {
-  Page,
-  Avatar,
-  Icon,
-  Grid,
-  Card,
-  Text,
-  Table,
-  Alert,
-  Progress,
-  colors,
-  Dropdown,
-  Button,
-  StampCard,
-  StatsCard,
-  ProgressCard,
-  Badge
-} from "tabler-react";
+import { Page, Avatar, Grid, Card, Text, Table, Button } from "tabler-react";
 
 class CustomerPage extends Component {
-  customers = [
-    {
-      id: 1,
-      name: "Phạm Trung Tính",
-      phone: "9.72426521E8",
-      address1: "82-84 ngõ 12 Chính Kinh, Thanh Xuân, Hà Nội",
-      address2: "Ngũ Kiên, Vĩnh Tường, Vĩnh Phúc",
-      teleSale: null,
-      sale: {
-        id: 11,
-        name: "Sale"
-      },
-      saleAdmin: {
-        id: 12,
-        name: "Sale Admin"
-      },
-      saleManager: {
-        id: 13,
-        name: "Sale Manager"
-      }
-    },
-    {
-      id: 2,
-      name: "Cao Thị Lan",
-      phone: "9.68785313E8",
-      address1: "82-84 ngõ 12 Chính Kinh, Thanh Xuân, Hà Nội",
-      address2: "Ngũ Kiên, Vĩnh Tường, Vĩnh Phúc",
-      teleSale: null,
-      sale: {
-        id: 11,
-        name: "Sale"
-      },
-      saleAdmin: {
-        id: 12,
-        name: "Sale Admin"
-      },
-      saleManager: {
-        id: 13,
-        name: "Sale Manager"
-      }
-    }
-  ];
+  componentDidMount = () => {
+    this.props.actions.getCustomers();
+  };
 
-  showItem = (customer) => {
-    this.props.history.push("/customer/" + customer.id + "/orders")
-  }
+  shouldComponentUpdate = nextProps => {
+    return nextProps.customers != this.props.customers;
+  };
+
+  showItem = customer => {
+    this.props.history.push("/customer/" + customer.id);
+  };
 
   render() {
+    let customers = this.props.customers;
     return (
       <SiteWrapper>
         <Page.Content title="Customer Dashboard">
@@ -103,9 +55,9 @@ class CustomerPage extends Component {
                     </Table.Row>
                   </Table.Header>
                   <Table.Body>
-                    {this.customers &&
-                      this.customers.map(customer => (
-                        <Table.Row>
+                    {customers &&
+                      customers.map(customer => (
+                        <Table.Row key={customer.id}>
                           <Table.Col alignContent="center">
                             <Avatar
                               imageURL="demo/faces/female/26.jpg"
@@ -120,19 +72,31 @@ class CustomerPage extends Component {
                             </Text>
                           </Table.Col>
                           <Table.Col>
-                            {customer.teleSale && <div>{customer.teleSale.name}</div>}
+                            {customer.teleSale && (
+                              <div>{customer.teleSale.name}</div>
+                            )}
                           </Table.Col>
                           <Table.Col>
                             {customer.sale && <div>{customer.sale.name}</div>}
                           </Table.Col>
                           <Table.Col>
-                            {customer.saleAdmin && <div>{customer.saleAdmin.name}</div>}
+                            {customer.saleAdmin && (
+                              <div>{customer.saleAdmin.name}</div>
+                            )}
                           </Table.Col>
                           <Table.Col>
-                            {customer.saleManager && <div>{customer.saleManager.name}</div>}
+                            {customer.saleManager && (
+                              <div>{customer.saleManager.name}</div>
+                            )}
                           </Table.Col>
                           <Table.Col>
-                            <Button color="primary" outline onClick={() => this.showItem(customer)}>Chi tiết</Button>
+                            <Button
+                              color="primary"
+                              outline
+                              onClick={() => this.showItem(customer)}
+                            >
+                              Chi tiết
+                            </Button>
                           </Table.Col>
                         </Table.Row>
                       ))}
@@ -147,4 +111,14 @@ class CustomerPage extends Component {
   }
 }
 
-export default CustomerPage;
+const mapStateToProps = state => ({
+  customers: state.default.customer.customers,
+  routing: state.routing.locationBeforeTransitions
+});
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators({ ...actions.customer }, dispatch),
+  dispatch
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CustomerPage);

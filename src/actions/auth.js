@@ -1,48 +1,32 @@
-import * as types from '../constants/auth';
+import * as types from "../constants/auth";
 
-export const loginRequest = (payload) => {
-  return {
-    type: types.AUTH_REQUEST,
-    payload
-  }
-}
+export const loginRequest = payload => ({
+  type: types.AUTH_REQUEST,
+  payload
+});
 
-export const loginSuccess = (response) => {
-  return {
-    type: types.AUTH_SUCCESS,
-    data: response
-  }
-}
+export const loginSuccess = response => ({
+  type: types.AUTH_SUCCESS,
+  data: response
+});
 
-export const loginError = (response) => {
-  return {
-    type: types.AUTH_FAILED,
-    error: response
-  }
-}
+export const loginError = response => ({
+  type: types.AUTH_FAILED,
+  error: response
+});
 
-export const getCurrentUserRequest = () => {
-  return {
-    type: types.GET_CURRENT_USER_REQUEST
-  }
-}
+export const getCurrentUserRequest = () => ({
+  type: types.GET_CURRENT_USER_REQUEST
+});
 
-export const getCurrentUserSuccess = (response) => {
-  return {
-    type: types.GET_CURRENT_USER_SUCCESS,
-    data: response
-  }
-}
+export const getCurrentUserSuccess = response => ({
+  type: types.GET_CURRENT_USER_SUCCESS,
+  data: response
+});
 
-export const getCurrentUserFailed = (response) => {
-  return {
-    type: types.GET_CURRENT_USER_FAILED,
-    error: response
-  }
-}
+export const getCurrentUserFailed = response => ({
+  type: types.GET_CURRENT_USER_FAILED,
+  error: response
+});
 
-export const logout = () => {
-  return {
-    type: types.LOGOUT_REQUEST
-  }
-}
+export const logout = () => ({ type: types.LOGOUT_REQUEST });

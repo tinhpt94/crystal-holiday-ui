@@ -4,13 +4,16 @@ import { Provider } from "react-redux";
 
 import Home from "./pages/Home";
 
+import 'antd/dist/antd.css';
 import "tabler-react/dist/Tabler.css";
+
 
 import store from "./store";
 import LoginPage from "./pages/LoginPage";
 import LogoutPage from "./pages/LogoutPage"
 import CustomerPage from "./pages/CustomerPage";
 import ProductPage from "./pages/ProductPage";
+import CustomerDetailPage from "./pages/CustomerDetailPage";
 
 class App extends React.Component {
   render() {
@@ -22,6 +25,7 @@ class App extends React.Component {
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/logout" component={LogoutPage} />
               <Route exact path="/customer" component={CustomerPage} />
+              <Route exact path="/customer/:id" component={CustomerDetailPage} />
               <Route exact path="/product" component={ProductPage} />
             </Switch>
           </Router>
