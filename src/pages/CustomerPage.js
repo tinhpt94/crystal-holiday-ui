@@ -41,14 +41,7 @@ class CustomerPage extends Component {
                         <i className="icon-people" />
                       </Table.ColHeader>
                       <Table.ColHeader>Name</Table.ColHeader>
-                      <Table.ColHeader>Tele Sale</Table.ColHeader>
-                      <Table.ColHeader alignContent="center">
-                        Sale
-                      </Table.ColHeader>
-                      <Table.ColHeader>Sale Admin</Table.ColHeader>
-                      <Table.ColHeader alignContent="center">
-                        Sale Manager
-                      </Table.ColHeader>
+                      <Table.ColHeader>Phone</Table.ColHeader>
                       <Table.ColHeader alignContent="center">
                         <i className="icon-settings" />
                       </Table.ColHeader>
@@ -67,27 +60,9 @@ class CustomerPage extends Component {
                           </Table.Col>
                           <Table.Col>
                             <div>{customer.name}</div>
-                            <Text size="sm" muted>
-                              Phone: {customer.phone}
-                            </Text>
                           </Table.Col>
                           <Table.Col>
-                            {customer.teleSale && (
-                              <div>{customer.teleSale.name}</div>
-                            )}
-                          </Table.Col>
-                          <Table.Col>
-                            {customer.sale && <div>{customer.sale.name}</div>}
-                          </Table.Col>
-                          <Table.Col>
-                            {customer.saleAdmin && (
-                              <div>{customer.saleAdmin.name}</div>
-                            )}
-                          </Table.Col>
-                          <Table.Col>
-                            {customer.saleManager && (
-                              <div>{customer.saleManager.name}</div>
-                            )}
+                            <div>{customer.phone}</div>
                           </Table.Col>
                           <Table.Col>
                             <Button
