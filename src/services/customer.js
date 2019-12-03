@@ -12,3 +12,9 @@ export const getCustomer = id => rest.get("/order/customers/" + id, {
         Authorization: localStorage.getItem("token")
     }
 })
+
+export const getCustomerOrders = id => rest.get("/order/customers/" + id + "/orders", {
+    headers: {
+        Authorization: localStorage.getItem("token")
+    }
+})

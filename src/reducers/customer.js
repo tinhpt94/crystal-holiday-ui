@@ -5,7 +5,8 @@ const DEFAULT_STATE = Immutable({
   customers: null,
   isRequesting: false,
   customer: null,
-  error: null
+  error: null,
+  orders: null
 });
 
 export default (state = DEFAULT_STATE, action) => {
@@ -40,6 +41,21 @@ export default (state = DEFAULT_STATE, action) => {
         .setIn(["isRequesting"], false)
         .setIn(["error"], action.error)
         .setIn(["customers"], null);
+    case types.CUSTOMER_ORDER_LIST_REQUEST:
+      return state
+        .setIn(["isRequesting"], true)
+        .setIn(["error"], null)
+        .setIn(["customers"], null);
+    case types.CUSTOMER_ORDER_LIST_SUCCESS:
+      return state
+        .setIn(["isRequesting"], false)
+        .setIn(["error"], null)
+        .setIn(["orders"], action.data);
+    case types.CUSTOMER_ORDER_LIST_FAILED:
+      return state
+        .setIn(["isRequesting"], false)
+        .setIn(["error"], action.error)
+        .setIn(["orders"], null);
     default:
       return state;
   }

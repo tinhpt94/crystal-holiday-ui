@@ -1,23 +1,26 @@
 import React, { Component } from "react";
 
-import { Descriptions, Card } from "antd";
+import { Descriptions, Card, Table } from "antd";
 import SiteWrapper from "../components/shared/SiteWrapper";
 import { Page, Grid, StatsCard } from "tabler-react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../actions";
+import OrderTable from "../components/shared/OrderTable";
 
 class CustomerDetailPage extends Component {
   componentDidMount = () => {
     this.props.actions.getCustomer(this.props.match.params.id);
+    this.props.actions.getCustomerOrders(this.props.match.params.id);
   };
 
   shouldComponentUpdate = nextProps => {
-    return nextProps.customer != this.props.customer;
+    return nextProps.customer !== this.props.customer;
   };
 
   render = () => {
-    let customer = this.props.customer;
+    let customer = this.props.customer.customer;
+    let orders = this.props.customer.orders;
     return (
       <SiteWrapper>
         <Page.Content title="">
@@ -42,38 +45,32 @@ class CustomerDetailPage extends Component {
                 )}
               </Card>
             </Grid.Col>
+            <Grid.Col width={0} sm={0} lg={3} />
+            
             <Grid.Col width={6} sm={6} lg={3}>
-              <StatsCard
+              {orders && <StatsCard
                 layout={1}
                 movement={0}
-                total="43"
+                total={orders.length}
                 label="Tổng số hợp đồng"
-              />
+              />}
             </Grid.Col>
             <Grid.Col width={6} sm={6} lg={3}>
-              <StatsCard
+              {orders && <StatsCard
                 layout={1}
                 movement={6}
-                total="500000000"
+                total={orders.reduce((sum, order) => sum + order.contractValueVat, 0)}
                 label="Tổng giá trị hợp đồng"
-              />
+              />}
             </Grid.Col>
-            <Grid.Col width={6} sm={6} lg={3}>
-              <StatsCard
-                layout={1}
-                movement={0}
-                total="200000000"
-                label="Đã thanh toán"
-              />
-            </Grid.Col>
-            <Grid.Col width={6} sm={6} lg={3}>
-              <StatsCard
-                layout={1}
-                movement={6}
-                total="300000000"
-                label="Chưa thanh toán"
-              />
-            </Grid.Col>
+            <Grid.Col width={0} sm={0} lg={3} />
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Col width={12}>
+              <Card>
+                <OrderTable dataSource={this.props.customer.orders} />
+              </Card>
+            </Grid.Col>                  
           </Grid.Row>
         </Page.Content>
       </SiteWrapper>
@@ -82,7 +79,7 @@ class CustomerDetailPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  customer: state.default.customer.customer,
+  customer: state.default.customer,
   routing: state.routing.locationBeforeTransitions
 });
 

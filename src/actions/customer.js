@@ -29,3 +29,18 @@ export const getCustomerFailed = error => ({
   type: types.CUSTOMER_DETAIL_FAILED,
   error
 });
+
+export const getCustomerOrders = idCustomer => ({
+  type: types.CUSTOMER_ORDER_LIST_REQUEST,
+  id: idCustomer
+});
+
+export const getCustomerOrdersSuccess = data => ({
+  type: types.CUSTOMER_ORDER_LIST_SUCCESS,
+  data
+});
+
+export const getCustomerOrdersFailed = error => ({
+  type: types.CUSTOMER_ORDER_LIST_FAILED,
+  error
+});

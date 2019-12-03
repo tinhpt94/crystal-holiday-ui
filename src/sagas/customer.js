@@ -19,9 +19,19 @@ function* getCustomer(args) {
     } catch (error) {
       yield put(actions.getCustomerFailed(error))
     }
+}
+
+function* getCustomerOrders(args) {
+  try {
+    let response = yield call(restAPI.getCustomerOrders, args.id)
+    yield put(actions.getCustomerOrdersSuccess(response.data))
+  } catch (error) {
+    yield put(actions.getCustomerOrdersFailed(error))
   }
+}
 
 export default function* customer() {
   yield takeLatest(types.CUSTOMER_LIST_REQUEST, getCustomers)
   yield takeLatest(types.CUSTOMER_DETAIL_REQUEST, getCustomer)
+  yield takeLatest(types.CUSTOMER_ORDER_LIST_REQUEST, getCustomerOrders)
 }
