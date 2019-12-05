@@ -32,7 +32,10 @@ export default (state = DEFAULT_STATE, action) => {
         .setIn(["isAuthenticated", false]);
     case types.LOGOUT_REQUEST:
       localStorage.removeItem("token");
-      return state.setIn(["user"], null).setIn(["isAuthenticated"], false);
+      return state
+        .setIn(["user"], null)
+        .setIn(["isAuthenticated"], false)
+        .setIn(['error'], null);
     default:
       return state;
   }

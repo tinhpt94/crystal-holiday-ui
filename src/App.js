@@ -14,6 +14,7 @@ import LogoutPage from "./pages/LogoutPage"
 import CustomerPage from "./pages/CustomerPage";
 import ProductPage from "./pages/ProductPage";
 import CustomerDetailPage from "./pages/CustomerDetailPage";
+import OrderDetailPage from "./pages/OrderDetailPage";
 
 class App extends React.Component {
   render() {
@@ -27,6 +28,7 @@ class App extends React.Component {
               <Route exact path="/customer" component={CustomerPage} />
               <Route exact path="/customer/:id" component={CustomerDetailPage} />
               <Route exact path="/product" component={ProductPage} />
+              <Route exact path="/order/:id" component={OrderDetailPage} />
             </Switch>
           </Router>
       </Provider>

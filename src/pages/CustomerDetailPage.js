@@ -68,7 +68,7 @@ class CustomerDetailPage extends Component {
           <Grid.Row>
             <Grid.Col width={12}>
               <Card>
-                <OrderTable dataSource={this.props.customer.orders} />
+                <OrderTable dataSource={this.props.customer.orders} history={this.props.history} />
               </Card>
             </Grid.Col>                  
           </Grid.Row>

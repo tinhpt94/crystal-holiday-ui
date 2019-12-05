@@ -5,7 +5,7 @@ import * as actions from "../actions/order";
 
 function* getOrderById(args) {
   try {
-    let response = yield call(restAPI.getOrderById, args);
+    let response = yield call(restAPI.getOrderById, args.id);
     yield put(actions.findOrderByIdSuccess(response.data));
   } catch (error) {
     yield put(actions.findOrderByIdFailed(error));
@@ -14,7 +14,7 @@ function* getOrderById(args) {
 
 function* getPaymentHistoriesByOrderId(args) {
   try {
-    let response = yield call(restAPI.getPaymentHistoriesByOrderId, args);
+    let response = yield call(restAPI.getPaymentHistoriesByOrderId, args.id);
     yield put(actions.findPaymentHistoryByOrderIdSuccess(response.data));
   } catch (error) {
     yield put(actions.findPaymentHistoryByOrderIdFailed(error));

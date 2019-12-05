@@ -12,6 +12,6 @@ function* getProducts(args) {
   }
 }
 
-export default function* auth() {
+export default function* product() {
   yield takeLatest(types.PRODUCT_LIST_REQUEST, getProducts)
 }
