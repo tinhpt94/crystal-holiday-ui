@@ -51,7 +51,7 @@ const mapToDataSource = data => ({
 
 class OrderDetailPage extends Component {
 
-  shouldComponentUpdate = nextProps => this.props !== nextProps
+  shouldComponentUpdate = nextProps => this.props.order !== nextProps.order
 
   componentDidMount = () => {
     this.props.actions.findOrderByIdRequest(this.props.match.params.id)
@@ -59,10 +59,54 @@ class OrderDetailPage extends Component {
   }
 
   render = () => {
-    let dataSource = this.props.dataSource ? this.props.dataSource.map(mapToDataSource) : null
+    let dataSource = this.props.order.paymentHistories ? this.props.order.paymentHistories.map(mapToDataSource) : null
+    let order = this.props.order.order;
     return (
       <SiteWrapper>
         <Page.Content>
+          <Grid.Row>
+            <Grid.Col>
+            <Card>
+                {order && (
+                  <Descriptions title="Thông tin chi tiết hợp đồng">
+                    <Descriptions.Item label="Mã hợp đồng">
+                      {order.id}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Tên dịch vụ">
+                      {order.cardName}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Ngày thành lập">
+                      {order.date}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Giá trị hợp đồng">
+                      {order.contractValue}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Giá trị hợp đồng (VAT)">
+                      {order.contractValueVat}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Chiết khấu">
+                      {`${order.discount} %`}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Trạng thái">
+                      {order.status}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Tele Sale">
+                      {order.teleSale ? order.teleSale.name : null}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Sale">
+                      {order.sale ? order.sale.name : null}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Sale Admin">
+                      {order.saleAdmin ? order.saleAdmin.name : null}
+                    </Descriptions.Item>
+                    <Descriptions.Item label="Sale Manager">
+                      {order.saleManager ? order.saleManager.name : null}
+                    </Descriptions.Item>
+                  </Descriptions>
+                )}
+              </Card>
+            </Grid.Col>
+          </Grid.Row>
           <Grid.Row>
             <Grid.Col width={12}>
               <Card>

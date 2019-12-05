@@ -67,7 +67,6 @@ export default class OrderTable extends Component {
   ];
 
   logRecord = record => {
-    console.log(this.props);
     this.props.history.push("/order/" + record.id);
   }
 

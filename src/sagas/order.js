@@ -3,18 +3,18 @@ import { takeLatest, put, call } from "redux-saga/effects";
 import * as restAPI from "../services/order";
 import * as actions from "../actions/order";
 
-function* getOrderById(args) {
+function* getOrderById(action) {
   try {
-    let response = yield call(restAPI.getOrderById, args.id);
+    let response = yield call(restAPI.getOrderById, action.id);
     yield put(actions.findOrderByIdSuccess(response.data));
   } catch (error) {
     yield put(actions.findOrderByIdFailed(error));
   }
 }
 
-function* getPaymentHistoriesByOrderId(args) {
+function* getPaymentHistoriesByOrderId(action) {
   try {
-    let response = yield call(restAPI.getPaymentHistoriesByOrderId, args.id);
+    let response = yield call(restAPI.getPaymentHistoriesByOrderId, action.id);
     yield put(actions.findPaymentHistoryByOrderIdSuccess(response.data));
   } catch (error) {
     yield put(actions.findPaymentHistoryByOrderIdFailed(error));
@@ -22,6 +22,6 @@ function* getPaymentHistoriesByOrderId(args) {
 }
 
 export default function* order() {
-  takeLatest(types.ORDER_DETAIL_REQUEST, getOrderById)
-  takeLatest(types.PAYMENT_LIST_REQUEST, getPaymentHistoriesByOrderId)
+  yield takeLatest(types.ORDER_DETAIL_REQUEST, getOrderById)
+  yield takeLatest(types.PAYMENT_LIST_REQUEST, getPaymentHistoriesByOrderId)
 }

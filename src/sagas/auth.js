@@ -3,9 +3,9 @@ import {takeLatest, put, call} from 'redux-saga/effects'
 import * as restAPI from '../services/auth'
 import * as actions from '../actions/auth'
 
-function* login(args) {
+function* login(action) {
   try {
-    let response = yield call(restAPI.login, args.payload)
+    let response = yield call(restAPI.login, action.payload)
     yield put(actions.loginSuccess(response.headers.authorization))
   } catch (error) {
     yield put(actions.loginError(error))

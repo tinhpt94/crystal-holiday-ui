@@ -3,27 +3,27 @@ import {takeLatest, put, call} from 'redux-saga/effects'
 import * as restAPI from '../services/customer'
 import * as actions from '../actions/customer'
 
-function* getCustomers(args) {
+function* getCustomers(action) {
   try {
-    let response = yield call(restAPI.getCustomers, args.params)
+    let response = yield call(restAPI.getCustomers, action.params)
     yield put(actions.getCustomersSuccess(response.data))
   } catch (error) {
     yield put(actions.getCustomersFailed(error))
   }
 }
 
-function* getCustomer(args) {
+function* getCustomer(action) {
     try {
-      let response = yield call(restAPI.getCustomer, args.id)
+      let response = yield call(restAPI.getCustomer, action.id)
       yield put(actions.getCustomerSuccess(response.data))
     } catch (error) {
       yield put(actions.getCustomerFailed(error))
     }
 }
 
-function* getCustomerOrders(args) {
+function* getCustomerOrders(action) {
   try {
-    let response = yield call(restAPI.getCustomerOrders, args.id)
+    let response = yield call(restAPI.getCustomerOrders, action.id)
     yield put(actions.getCustomerOrdersSuccess(response.data))
   } catch (error) {
     yield put(actions.getCustomerOrdersFailed(error))
