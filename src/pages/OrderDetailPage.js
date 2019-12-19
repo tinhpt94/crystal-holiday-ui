@@ -85,7 +85,7 @@ class OrderDetailPage extends Component {
                       {order.contractValueVat}
                     </Descriptions.Item>
                     <Descriptions.Item label="Chiết khấu">
-                      {`${order.discount} %`}
+                      {`${order.discount}%/70%`}
                     </Descriptions.Item>
                     <Descriptions.Item label="Trạng thái">
                       {order.status}

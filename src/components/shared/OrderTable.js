@@ -6,7 +6,7 @@ const mapOrderToDataSource = order => ({
   cardName: order.cardName,
   contractValue: order.contractValue,
   contractValueVat: order.contractValueVat,
-  teleSale: order.telesale ? order.teleSale.name : null,
+  teleSale: order.teleSale ? order.teleSale.name : null,
   sale: order.sale ? order.sale.name : null,
   saleAdmin: order.saleAdmin ? order.saleAdmin.name : null,
   saleManager: order.saleManager ? order.saleManager.name : null
@@ -78,7 +78,7 @@ export default class OrderTable extends Component {
       <Table
         dataSource={dataSource}
         columns={this.columns}
-        scroll={{ x: 1500, y: 300 }}
+        scroll={{ x: 1500, y: 1200 }}
         rowKey={rowItem => rowItem.id}
       />
     );
