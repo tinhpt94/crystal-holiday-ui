@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/crystal-holiday-ui/static/css/main.010011fd.chunk.css",
-    "main.js": "/crystal-holiday-ui/static/js/main.874b676e.chunk.js",
-    "main.js.map": "/crystal-holiday-ui/static/js/main.874b676e.chunk.js.map",
-    "runtime-main.js": "/crystal-holiday-ui/static/js/runtime-main.21c9cd3c.js",
-    "runtime-main.js.map": "/crystal-holiday-ui/static/js/runtime-main.21c9cd3c.js.map",
-    "static/css/2.df547cea.chunk.css": "/crystal-holiday-ui/static/css/2.df547cea.chunk.css",
-    "static/js/2.3d88bd0a.chunk.js": "/crystal-holiday-ui/static/js/2.3d88bd0a.chunk.js",
-    "static/js/2.3d88bd0a.chunk.js.map": "/crystal-holiday-ui/static/js/2.3d88bd0a.chunk.js.map",
-    "index.html": "/crystal-holiday-ui/index.html",
-    "precache-manifest.096efb1a95c7fa71095936c30a4dd763.js": "/crystal-holiday-ui/precache-manifest.096efb1a95c7fa71095936c30a4dd763.js",
-    "service-worker.js": "/crystal-holiday-ui/service-worker.js",
-    "static/css/2.df547cea.chunk.css.map": "/crystal-holiday-ui/static/css/2.df547cea.chunk.css.map",
-    "static/css/main.010011fd.chunk.css.map": "/crystal-holiday-ui/static/css/main.010011fd.chunk.css.map",
-    "static/media/Tabler.css": "/crystal-holiday-ui/static/media/zw.e223cee5.svg"
+    "main.css": "./static/css/main.156c389f.chunk.css",
+    "main.js": "./static/js/main.8109492e.chunk.js",
+    "main.js.map": "./static/js/main.8109492e.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.164fa8c2.js",
+    "runtime-main.js.map": "./static/js/runtime-main.164fa8c2.js.map",
+    "static/css/2.3700bebc.chunk.css": "./static/css/2.3700bebc.chunk.css",
+    "static/js/2.8cff8b08.chunk.js": "./static/js/2.8cff8b08.chunk.js",
+    "static/js/2.8cff8b08.chunk.js.map": "./static/js/2.8cff8b08.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.46b68bef9e6ee60ed0d0a812a318133b.js": "./precache-manifest.46b68bef9e6ee60ed0d0a812a318133b.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.3700bebc.chunk.css.map": "./static/css/2.3700bebc.chunk.css.map",
+    "static/css/main.156c389f.chunk.css.map": "./static/css/main.156c389f.chunk.css.map",
+    "static/media/Tabler.css": "./static/media/zw.e223cee5.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.21c9cd3c.js",
-    "static/css/2.df547cea.chunk.css",
-    "static/js/2.3d88bd0a.chunk.js",
-    "static/css/main.010011fd.chunk.css",
-    "static/js/main.874b676e.chunk.js"
+    "static/js/runtime-main.164fa8c2.js",
+    "static/css/2.3700bebc.chunk.css",
+    "static/js/2.8cff8b08.chunk.js",
+    "static/css/main.156c389f.chunk.css",
+    "static/js/main.8109492e.chunk.js"
   ]
 }
