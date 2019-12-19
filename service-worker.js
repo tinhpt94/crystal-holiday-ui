@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/crystal-holiday-ui/precache-manifest.630bc5064384be609de0e373a5664a5b.js"
+  "/crystal-holiday-ui/precache-manifest.09e543a08155e281bc86f78e23512830.js"
 );
 
 self.addEventListener('message', (event) => {
