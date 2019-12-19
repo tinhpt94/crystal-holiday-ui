@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/crystal-holiday-ui/static/css/main.010011fd.chunk.css",
+    "main.js": "/crystal-holiday-ui/static/js/main.874b676e.chunk.js",
+    "main.js.map": "/crystal-holiday-ui/static/js/main.874b676e.chunk.js.map",
+    "runtime-main.js": "/crystal-holiday-ui/static/js/runtime-main.21c9cd3c.js",
+    "runtime-main.js.map": "/crystal-holiday-ui/static/js/runtime-main.21c9cd3c.js.map",
+    "static/css/2.df547cea.chunk.css": "/crystal-holiday-ui/static/css/2.df547cea.chunk.css",
+    "static/js/2.3d88bd0a.chunk.js": "/crystal-holiday-ui/static/js/2.3d88bd0a.chunk.js",
+    "static/js/2.3d88bd0a.chunk.js.map": "/crystal-holiday-ui/static/js/2.3d88bd0a.chunk.js.map",
+    "index.html": "/crystal-holiday-ui/index.html",
+    "precache-manifest.096efb1a95c7fa71095936c30a4dd763.js": "/crystal-holiday-ui/precache-manifest.096efb1a95c7fa71095936c30a4dd763.js",
+    "service-worker.js": "/crystal-holiday-ui/service-worker.js",
+    "static/css/2.df547cea.chunk.css.map": "/crystal-holiday-ui/static/css/2.df547cea.chunk.css.map",
+    "static/css/main.010011fd.chunk.css.map": "/crystal-holiday-ui/static/css/main.010011fd.chunk.css.map",
+    "static/media/Tabler.css": "/crystal-holiday-ui/static/media/zw.e223cee5.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.21c9cd3c.js",
+    "static/css/2.df547cea.chunk.css",
+    "static/js/2.3d88bd0a.chunk.js",
+    "static/css/main.010011fd.chunk.css",
+    "static/js/main.874b676e.chunk.js"
+  ]
+}
