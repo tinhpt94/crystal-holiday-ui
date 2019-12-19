@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "15e9ac89f436e1931c0fdcc9e0e8a28d",
+    "revision": "efed59041b1c64d80be1bd24bcc2bc24",
     "url": "/crystal-holiday-ui/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crystal-holiday-ui/static/css/2.5e5e275e.chunk.css"
   },
   {
-    "revision": "61cd5de58cde4616afa8",
+    "revision": "3313f8ff7b73358acd43",
     "url": "/crystal-holiday-ui/static/css/main.156c389f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crystal-holiday-ui/static/js/2.118539bb.chunk.js"
   },
   {
-    "revision": "61cd5de58cde4616afa8",
-    "url": "/crystal-holiday-ui/static/js/main.62870a76.chunk.js"
+    "revision": "3313f8ff7b73358acd43",
+    "url": "/crystal-holiday-ui/static/js/main.8109492e.chunk.js"
   },
   {
     "revision": "7c67cc85e5a803a7b0f0",
