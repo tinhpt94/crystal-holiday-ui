@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/crystal-holiday-ui/static/css/main.156c389f.chunk.css",
-    "main.js": "/crystal-holiday-ui/static/js/main.8109492e.chunk.js",
-    "main.js.map": "/crystal-holiday-ui/static/js/main.8109492e.chunk.js.map",
-    "runtime-main.js": "/crystal-holiday-ui/static/js/runtime-main.21c9cd3c.js",
-    "runtime-main.js.map": "/crystal-holiday-ui/static/js/runtime-main.21c9cd3c.js.map",
-    "static/css/2.5e5e275e.chunk.css": "/crystal-holiday-ui/static/css/2.5e5e275e.chunk.css",
-    "static/js/2.118539bb.chunk.js": "/crystal-holiday-ui/static/js/2.118539bb.chunk.js",
-    "static/js/2.118539bb.chunk.js.map": "/crystal-holiday-ui/static/js/2.118539bb.chunk.js.map",
+    "main.css": "/crystal-holiday-ui/static/css/main.010011fd.chunk.css",
+    "main.js": "/crystal-holiday-ui/static/js/main.cfb0b691.chunk.js",
+    "main.js.map": "/crystal-holiday-ui/static/js/main.cfb0b691.chunk.js.map",
+    "runtime-main.js": "/crystal-holiday-ui/static/js/runtime-main.22dab9d0.js",
+    "runtime-main.js.map": "/crystal-holiday-ui/static/js/runtime-main.22dab9d0.js.map",
+    "static/css/2.33530476.chunk.css": "/crystal-holiday-ui/static/css/2.33530476.chunk.css",
+    "static/js/2.fec111d9.chunk.js": "/crystal-holiday-ui/static/js/2.fec111d9.chunk.js",
+    "static/js/2.fec111d9.chunk.js.map": "/crystal-holiday-ui/static/js/2.fec111d9.chunk.js.map",
     "index.html": "/crystal-holiday-ui/index.html",
-    "precache-manifest.630bc5064384be609de0e373a5664a5b.js": "/crystal-holiday-ui/precache-manifest.630bc5064384be609de0e373a5664a5b.js",
+    "precache-manifest.19dee27190bb247de6f360995dcfb9b9.js": "/crystal-holiday-ui/precache-manifest.19dee27190bb247de6f360995dcfb9b9.js",
     "service-worker.js": "/crystal-holiday-ui/service-worker.js",
-    "static/css/2.5e5e275e.chunk.css.map": "/crystal-holiday-ui/static/css/2.5e5e275e.chunk.css.map",
-    "static/css/main.156c389f.chunk.css.map": "/crystal-holiday-ui/static/css/main.156c389f.chunk.css.map",
+    "static/css/2.33530476.chunk.css.map": "/crystal-holiday-ui/static/css/2.33530476.chunk.css.map",
+    "static/css/main.010011fd.chunk.css.map": "/crystal-holiday-ui/static/css/main.010011fd.chunk.css.map",
+    "static/js/2.fec111d9.chunk.js.LICENSE": "/crystal-holiday-ui/static/js/2.fec111d9.chunk.js.LICENSE",
     "static/media/Tabler.css": "/crystal-holiday-ui/static/media/zw.e223cee5.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.21c9cd3c.js",
-    "static/css/2.5e5e275e.chunk.css",
-    "static/js/2.118539bb.chunk.js",
-    "static/css/main.156c389f.chunk.css",
-    "static/js/main.8109492e.chunk.js"
+    "static/js/runtime-main.22dab9d0.js",
+    "static/css/2.33530476.chunk.css",
+    "static/js/2.fec111d9.chunk.js",
+    "static/css/main.010011fd.chunk.css",
+    "static/js/main.cfb0b691.chunk.js"
   ]
 }
